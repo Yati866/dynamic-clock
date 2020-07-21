@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="clock.css">
+    <title>Dynamic clock</title>
+</head>
+<body>
+    <div class="sign">
+        <span class="fast-flicker">Dyn</span>amic<span class="flicker">:cl</span>ock
+      </div>
+    <div class="container">
+      <p id="show-clock"></p>
+    </div>
+    <div class="clear-button">
+        <button class="button1" onclick="clearInterval(clock)">Stop</button>
+        <!-- <button class="button1" onclick="setInterval(clockTiming,1000)">Start</button> -->
+    </div>
+    <script type="text/javascript">
+    var clock = setInterval(clockTiming,1000);
+    function clockTiming(){
+    var d = new Date();
+    var s = d.toLocaleTimeString();
+    document.getElementById('show-clock').innerHTML = s;
+    }
+
+    </script>
+</body>
+</html>
